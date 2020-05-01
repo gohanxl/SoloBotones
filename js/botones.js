@@ -8,21 +8,10 @@ const tables = document.getElementById("shop-tables");
 
 $(".categories").on("click", function () {
   let thisId = $(this).attr("id");
-  $(`.${thisId}`).toggleClass("hide").siblings(".row").addClass("hide")
+  let element = $(`.${thisId}`);
+
+  if (element.hasClass("hide")) {
+    element.removeClass("hide").siblings(".row").addClass("hide");
+  }
   $(this).toggleClass("active").siblings().removeClass("active");
 });
-
-$(beds).on("click", () => {
-  console.log("ENTROF");
-  const areBedsHiding = $(".beds").hasClass("hide");
-
-  if (areBedsHiding) {
-    $(".beds").removeClass("hide");
-  } else {
-    $(".beds").addClass("hide");
-  }
-});
-
-// $(beds).on("click", () => {
-//   $(".products").toggleClass("hide").siblings().addClass("hide");
-// });
